@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SUPERINTELIGENTNOST — Raziskovalna pobuda Agentics</title>
+<meta name="description" content="Superinteligentnost: suveren evropsko zasidran raziskovalni inštitut in inženirski laboratorij pod okriljem družbe Agentics Inc.">
+<style>
+  :root{--bg:#0b0e14;--panel:#121826;--panel2:#0f1522;--line:#232c40;--ink:#e8ecf1;--mut:#9aa7bd;--acc:#8fb8ff;--acc2:#c9d9ff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  a{color:var(--acc)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,14,20,.94);backdrop-filter:blur(6px);z-index:5}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:18px}
+  .brand{font-weight:800;letter-spacing:.14em;font-size:15px}
+  .brand small{display:block;font-weight:600;letter-spacing:.06em;color:var(--mut);font-size:11px}
+  .navlinks{display:flex;gap:18px;font-size:14px}
+  .navlinks a{color:var(--mut);text-decoration:none}
+  .navlinks a:hover{color:var(--ink)}
+  .toggle{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex-shrink:0}
+  .toggle button{background:transparent;border:0;color:var(--mut);padding:7px 13px;cursor:pointer;font-weight:700;font-size:13px}
+  .toggle button.on{background:var(--acc);color:#0b0e14}
+  div[data-lang]{display:none}
+  body[data-lang="sl"] div[data-lang="sl"]{display:block}
+  body[data-lang="en"] div[data-lang="en"]{display:block}
+  small[data-lang]{display:none}
+  body[data-lang="sl"] small[data-lang="sl"]{display:block}
+  body[data-lang="en"] small[data-lang="en"]{display:block}
+  .navlinks[data-lang]{display:none}
+  body[data-lang="sl"] .navlinks[data-lang="sl"]{display:flex}
+  body[data-lang="en"] .navlinks[data-lang="en"]{display:flex}
+  .hero{padding:64px 0 44px}
+  .eyebrow{color:var(--acc);letter-spacing:.12em;text-transform:uppercase;font-size:12px;font-weight:700}
+  h1{font-size:56px;line-height:1.05;margin:14px 0 10px;letter-spacing:.02em}
+  .sub{font-size:22px;color:var(--acc2);margin:0 0 18px}
+  .lead{font-size:18px;color:#c7d0e0;max-width:820px}
+  blockquote{border-left:3px solid var(--acc);margin:28px 0;padding:4px 0 4px 18px;font-size:19px;color:var(--ink);max-width:820px}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:28px;margin:0 0 8px}
+  .secintro{color:var(--mut);max-width:820px;margin:0 0 24px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .card .kicker{color:var(--acc);font-size:12px;letter-spacing:.12em;font-weight:700;text-transform:uppercase}
+  .card h3{margin:8px 0 6px;font-size:19px}
+  .card p{margin:0;color:#c7d0e0;font-size:15px}
+  .card .tag{margin-top:12px;color:var(--mut);font-size:13px}
+  .term{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .term h3{margin:0 0 6px;font-size:20px}
+  .term p{margin:0;color:#c7d0e0}
+  .align{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:12px;padding:18px 20px}
+  .align p{margin:0}
+  .terminal{background:#05070c;border:1px solid var(--line);border-radius:12px;padding:20px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.7;overflow-x:auto}
+  .terminal .cmd{color:#7ee2a8}
+  .terminal .dim{color:var(--mut)}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--acc);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+  td{color:#c7d0e0}
+  td:first-child{color:var(--ink);font-weight:700;white-space:nowrap}
+  footer{border-top:1px solid var(--line);padding:32px 0 44px;color:var(--mut);font-size:14px}
+  footer .doms{color:var(--ink);letter-spacing:.06em}
+  @media(max-width:820px){h1{font-size:38px}.grid,.grid2,.grid4{grid-template-columns:1fr}.navlinks{display:none !important}table{font-size:13.5px}td:first-child{white-space:normal}}
+</style>
+</head>
+<body data-lang="sl">
+<header>
+  <div class="wrap nav">
+    <div class="brand">SUPERINTELIGENTNOST<small data-lang="sl">Raziskovalna pobuda · Agentics Inc.</small><small data-lang="en">Research Initiative · Agentics Inc.</small></div>
+    <nav class="navlinks" data-lang="sl">
+      <a href="#opredelitev">Opredelitev</a>
+      <a href="#plasti">Plasti</a>
+      <a href="#vektorji">Vektorji</a>
+      <a href="#nacrt">Načrt</a>
+    </nav>
+    <nav class="navlinks" data-lang="en">
+      <a href="#definition">Definition</a>
+      <a href="#layers">Layers</a>
+      <a href="#vectors">Vectors</a>
+      <a href="#plan">Plan</a>
+    </nav>
+    <div class="toggle" role="group" aria-label="Language / Jezik">
+      <button type="button" data-setlang="sl" class="on" aria-pressed="true">SL</button>
+      <button type="button" data-setlang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+<div data-lang="sl">
+  <div class="hero">
+    <div class="eyebrow">Slovensko zasidran · Srednjeevropski inženiring sistemov umetne inteligence · .SI in globalni .COM</div>
+    <h1>SUPERINTELIGENTNOST</h1>
+    <p class="sub">Raziskovanje napredne inteligence. Inženiring odgovorne avtonomije.</p>
+    <p class="lead">Iz slovenske besede za superinteligenco delujemo kot suveren evropsko zasidran raziskovalni inštitut in specializiran inženirski laboratorij pod okriljem družbe Agentics Inc.</p>
+    <blockquote>»Ne trdimo, da gradimo superinteligenco. Gradimo sisteme, ki organizacijam omogočajo, da vse zmogljivejšo umetno inteligenco uporabljajo varno, merljivo in pod lastno avtoriteto.«</blockquote>
+  </div>
+
+  <section id="opredelitev">
+    <h2>Kaj pomeni superinteligentnost</h2>
+    <p class="secintro">Beseda <b>superinteligentnost</b> poimenuje lastnost — »biti superinteligenten«. Beseda <b>superinteligenca</b> pa poimenuje bitje ali sistem. Govorimo torej o lastnosti, ki se lahko uresniči v različnih nosilcih — in vprašanje je, kje.</p>
+    <div class="grid2">
+      <div class="term">
+        <h3>Uresničena v enem samem računalniku</h3>
+        <p>En sam, zaokrožen sistem, ki po splošnih kognitivnih sposobnostih bistveno presega najboljše človeške umove — na skoraj vseh področjih, od znanstvenega sklepanja in strateškega načrtovanja do ustvarjalnosti in razumevanja ljudi. Ne mreža in ne skupina sistemov.</p>
+      </div>
+      <div class="term">
+        <h3>Uresničena v umetnih oblikah</h3>
+        <p>Lastnost, ki se pojavi na nebiološki podlagi: računalniki, programska oprema, roboti, porazdeljena omrežja, simulirani um. Izraz je širši od »umetne inteligence«, ker ne označuje ene same tehnologije.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px">Za razliko od bioloških ali kolektivnih oblik. Biološke poti — genetsko izbiranje ali izboljševanje, nootropiki, dolgoročno izboljševanje populacije z izobraževanjem, prehrano in zdravjem — ostajajo v okviru živih organizmov in so počasnejše: omejujejo jih biologija, velikost lobanje, hitrost nevronov in dolžina generacij. Kolektivne oblike — znanost, trg, internet — zmorejo to, česar noben posameznik ne bi mogel, a jih omejujejo komunikacija, usklajevanje in različni cilji udeležencev.</p>
+    <div class="grid4">
+      <div class="card"><h3>Hitrost</h3><p>Elektronska vezja delujejo mnogo hitreje kot nevroni.</p></div>
+      <div class="card"><h3>Kopiranje</h3><p>Digitalni um je mogoče kopirati in poganjati vzporedno.</p></div>
+      <div class="card"><h3>Razširljivost</h3><p>S strojno opremo ga lahko povečujemo, česar z možgani ne moremo.</p></div>
+      <div class="card"><h3>Samoizboljševanje</h3><p>Sistem bi lahko izboljševal lastno zasnovo — eksplozija inteligence, ki jo je predlagal I. J. Good leta 1965.</p></div>
+    </div>
+    <div class="align">
+      <p><b>Zakaj je to pomembno.</b> Pri enem samem sistemu je vse osredotočeno: ena odločitev, en cilj, ena točka nadzora. V ospredju je zato vprašanje usklajenosti: ali so cilji takega sistema združljivi s človeškimi vrednotami? Če niso, lahko tudi navidezno nedolžen cilj privede do škodljivih posledic, saj sistem nima vgrajene težnje, da bi upošteval človeške interese.</p>
+    </div>
+  </section>
+
+  <section id="plasti">
+    <h2>Tri plasti</h2>
+    <p class="secintro">Od podjetniškega okrilja prek suverenega inštituta do programske opreme, ki jo institucije dejansko kupujejo.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="kicker">Plast 01 · Podjetniško okrilje</div>
+        <h3>Agentics Inc.</h3>
+        <p>Globalno komercialno okrilje in pogodbena entiteta za podjetja. Hrani licenciranje programske opreme kot storitve za podjetja, skladnost s SOC2, odškodninsko odgovornost do strank in globalne nabavne odnose.</p>
+        <div class="tag">Komercialno okrilje in podjetniška znamka</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Plast 02 · Raziskovalni inštitut</div>
+        <h3>Superinteligentnost</h3>
+        <p>Suverena laboratorijska identiteta, ki deluje prek superinteligentnost.si in superinteligentnost.com. Izvaja formalne dokaze o zadrževanju, epistemske varnostne ocene in raziskave evropskega upravljanja umetne inteligence.</p>
+        <div class="tag">Raziskovalni laboratorij in suvereni pečat</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Plast 03 · Izvedbeni substrat</div>
+        <h3>AOS / CREA / RIP</h3>
+        <p>Modularna programska oprema, ki jo institucije dejansko kupujejo: operacijski sistem za agente (AOS), zaprta izvedbena ovojna arhitektura (CREA) in posrednik za klice v času izvajanja (RIP).</p>
+        <div class="tag">Modularni podjetniški programski izdelek</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vektorji">
+    <h2>Trije vektorji</h2>
+    <p class="secintro">Raziskovalni program inštituta: zadrževanje, epistemska varnost in najmanjša potrebna avtoriteta.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="kicker">Vektor 01 · Induktivno zadrževanje</div>
+        <h3>Zaprte izvedbene ovojnice</h3>
+        <p>Formalizacija aksioma I: nepreglednost notranjosti narekuje strogost oboda. Uveljavlja algebraične invariante stanja pri vsakem koraku delovanja agenta.</p>
+        <div class="tag">Algebraični dokazi CREA</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Vektor 02 · Epistemska varnost</div>
+        <h3>Epistemski stroji stanj</h3>
+        <p>Nevtralizacija 6-stopenjske epistemske napadalne verige. Ločuje špekulativne razmišljujoče medpomnilnike od trajnega epizodnega spomina ter preprečuje halucinirano gotovost in zlorabo prek pozivov.</p>
+        <div class="tag">Nemonotono revidiranje prepričanj AGM</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Vektor 03 · Najmanjša potrebna avtoriteta</div>
+        <h3>Ničelna ambientalna avtoriteta</h3>
+        <p>Vozlišča agencije s strojno potrjeno identiteto (AAN). Agenti nimajo nobenih ambientalnih dovoljenj; zmožnosti se zakupijo zunaj pasu prek kriptografskih vozovnic s podsekundnim časom veljavnosti.</p>
+        <div class="tag">Strojne enklave in zakupnine SPIFFE</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Zadrževanje v delovanju</h2>
+    <p class="secintro">Kako zadrževalni substrat Superinteligentnosti prestreže samostojno razmišljanje agenta, preden se posledične spremembe stanja zapišejo v zunanje podatkovne posesti podjetja.</p>
+    <div class="terminal">
+      <div class="cmd">aos_runtime_proxy --env=suveren-eu --enforce=strict STANJE: OBOROŽEN</div>
+      <div><span class="dim">[00:00.012]</span> [Ravnina 1: Strojna oprema] Vozlišče agencije s potrjeno identiteto inicializirano prek enklave AMD SEV-SNP. Prstni odtis preverjen.</div>
+      <div><span class="dim">[00:00.045]</span> [Sistem pripravljen] Čakanje na dodelitev naloge agentu. Pripravljen na uveljavljanje zaprte izvedbene ovojnice.</div>
+    </div>
+  </section>
+
+  <section id="nacrt">
+    <h2>90-dnevni načrt</h2>
+    <p class="secintro">Od preverjanja identitete do plačanega podjetniškega pilota.</p>
+    <table>
+      <tr><th>Obdobje</th><th>Strateški poudarek</th><th>Funkcionalni izdelki</th><th>Dokazilo o potrditvi</th></tr>
+      <tr>
+        <td>Dnevi 01–15</td>
+        <td>Preverjanje sredstev in identitete</td>
+        <td>Razrešitev administrativne blokade domene superinteligentnost.si pri 101domain · Preizkus treh pozicionirnih izjav pri 15 tehničnih deležnikih · Objava manifesta laboratorija in suverenega raziskovalnega portala</td>
+        <td>Domena razrešena; jasnost pripovedi brez trditev o splošni umetni inteligenci</td>
+      </tr>
+      <tr>
+        <td>Dnevi 16–30</td>
+        <td>Odkrivanje akutnih problemov</td>
+        <td>Intervjuji z 10–15 direktorji za informacijsko varnost in vodjami platform umetne inteligence · Izolacija enega visoko tveganega neomejenega delovnega toka (npr. eksfiltracija podatkov z več orodji) · Kartiranje regulativnih omejitev strank (visoko tvegani sistemi po Aktu EU o umetni inteligenci)</td>
+        <td>Potrjen proračunski lastnik in pripravljenost na preizkus rešitve</td>
+      </tr>
+      <tr>
+        <td>Dnevi 31–60</td>
+        <td>Revizijski demonstrator</td>
+        <td>Izdelava raziskovalnega agenta »na ključ« s stranskim posrednikom RIP · Uvedba človeških vrat z negativno afirmacijo in pogona za revizijo prepričanj AGM · Izdaja tehnične monografije št. 01 z reproducibilnimi sledmi meritev</td>
+        <td>100-odstotna celovitost zadrževanja proti vdorom prek pozivov</td>
+      </tr>
+      <tr>
+        <td>Dnevi 61–90</td>
+        <td>Plačani podjetniški pilot</td>
+        <td>Izvedba standardiziranega 6-tedenskega komercialnega pilotnega dogovora v vrednosti 25.000–50.000 ameriških dolarjev · Uvedba omejene izvedbene ovojnice v preskusnem okolju stranke · Dokumentiranje merljivega zmanjšanja tveganja nepooblaščenih sprememb</td>
+        <td>Podpisana pilotna pogodba in potrjena študija primera</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <div class="doms">superinteligentnost.si · superinteligentnost.com</div>
+    <p>Superinteligentnost — suveren evropsko zasidran raziskovalni inštitut pod okriljem družbe Agentics Inc.</p>
+    <p>Ne trdimo, da gradimo superinteligenco. Gradimo sisteme, ki organizacijam omogočajo varno uporabo vse zmogljivejše umetne inteligence.</p>
+  </footer>
+</div>
+
+<div data-lang="en">
+  <div class="hero">
+    <div class="eyebrow">Slovenian-Rooted · Central European AI Systems Engineering · .SI &amp; Global .COM</div>
+    <h1>SUPERINTELIGENTNOST</h1>
+    <p class="sub">Researching Advanced Intelligence. Engineering Accountable Autonomy.</p>
+    <p class="lead">Starting from the Slovenian term for superintelligence (<i>superinteligentnost</i>), we operate as a sovereign European-rooted research institute and specialist engineering laboratory under Agentics Inc.</p>
+    <blockquote>“We do not claim to build superintelligence. We build the systems that let organizations use increasingly capable AI safely, measurably, and under their own authority.”</blockquote>
+  </div>
+
+  <section id="definition">
+    <h2>What superintelligence means</h2>
+    <p class="secintro">The word <b><i>superinteligentnost</i></b> names a property — “being superintelligent.” The word <b><i>superinteligenca</i></b> names a being or a system. So we are talking about a property that can be realized in different bearers — and the question is where.</p>
+    <div class="grid2">
+      <div class="term">
+        <h3>Realized in a single computer</h3>
+        <p>One single, rounded system that, across general cognitive abilities, substantially exceeds the best human minds — in almost every domain, from scientific reasoning and strategic planning to creativity and understanding people. Not a network, not a group of systems.</p>
+      </div>
+      <div class="term">
+        <h3>Realized in artificial forms</h3>
+        <p>A property that appears on a non-biological substrate: computers, software, robots, distributed networks, a simulated mind. Broader than “artificial intelligence,” because it does not denote a single technology.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px">As opposed to biological or collective forms. Biological paths — genetic selection or enhancement, nootropics, long-term improvement of the population through education, nutrition, and health — remain within living organisms and are slower: bounded by biology, skull size, neuron speed, and generation length. Collective forms — science, markets, the internet — achieve what no individual could, but are bounded by communication, coordination, and the differing goals of participants.</p>
+    <div class="grid4">
+      <div class="card"><h3>Speed</h3><p>Electronic circuits operate much faster than neurons.</p></div>
+      <div class="card"><h3>Copying</h3><p>A digital mind can be copied and run in parallel.</p></div>
+      <div class="card"><h3>Scalability</h3><p>It can be enlarged with hardware, which cannot be done with brains.</p></div>
+      <div class="card"><h3>Self-improvement</h3><p>A system could improve its own design — the intelligence explosion proposed by I. J. Good in 1965.</p></div>
+    </div>
+    <div class="align">
+      <p><b>Why this matters.</b> In a single system, everything is concentrated: one decision, one goal, one point of control. That puts the alignment problem front and center: are the goals of such a system compatible with human values? If not, even a seemingly innocent goal can lead to harmful consequences, since the system has no built-in tendency to respect human interests.</p>
+    </div>
+  </section>
+
+  <section id="layers">
+    <h2>Three layers</h2>
+    <p class="secintro">From the enterprise umbrella through the sovereign institute to the software institutions actually buy.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="kicker">Layer 01 · Enterprise Parent</div>
+        <h3>Agentics Inc.</h3>
+        <p>The global commercial umbrella and enterprise contracting entity. Houses enterprise SaaS licensing, SOC2 compliance, client indemnity, and global procurement relationships.</p>
+        <div class="tag">Commercial Parent &amp; Enterprise Brand</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Layer 02 · Research Institute</div>
+        <h3>Superinteligentnost</h3>
+        <p>Sovereign laboratory identity operating across superinteligentnost.si and superinteligentnost.com. Conducts formal containment proofs, epistemic kill-chain evaluations, and European AI governance research.</p>
+        <div class="tag">Research Lab &amp; Sovereign Imprimatur</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Layer 03 · Runtime Substrate</div>
+        <h3>AOS / CREA / RIP</h3>
+        <p>The actual modular software purchased by institutions: Agency Operating System (AOS), Closed Runtime Envelope Architecture (CREA), and the Runtime Invocation Proxy (RIP).</p>
+        <div class="tag">Modular Enterprise Software Product</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vectors">
+    <h2>Three vectors</h2>
+    <p class="secintro">The institute's research program: containment, epistemic security, and least privilege.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="kicker">Vector 01 · Inductive Containment</div>
+        <h3>Closed Runtime Envelopes</h3>
+        <p>Formalizing Axiom I: Opacity of the interior dictates strictness of the perimeter. Enforces algebraic state invariants across every agent action step.</p>
+        <div class="tag">CREA Algebraic Proofs</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Vector 02 · Epistemic Security</div>
+        <h3>Epistemic State Machines</h3>
+        <p>Neutralizing the 6-stage Epistemic Kill Chain. Distinguishes speculative reasoning buffers from persistent episodic memory, preventing hallucinated certainty and prompt injection traversal.</p>
+        <div class="tag">AGM Non-Monotonic Belief Revision</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Vector 03 · Least-Privilege Agency</div>
+        <h3>Zero Ambient Authority</h3>
+        <p>Hardware-attested Attested Agency Nodes (AAN). Agents possess zero ambient permissions; capabilities are leased out-of-band via cryptographic tickets with sub-second TTLs.</p>
+        <div class="tag">Hardware Enclaves &amp; SPIFFE Leases</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Containment in action</h2>
+    <p class="secintro">Experience how Superinteligentnost's containment substrate intercepts autonomous agent reasoning before consequential state mutations commit to external enterprise data estates.</p>
+    <div class="terminal">
+      <div class="cmd">aos_runtime_proxy --env=sovereign-eu --enforce=strict STATUS: ARMED</div>
+      <div><span class="dim">[00:00.012]</span> [Plane 1: Hardware] Attested Agency Node initialized via AMD SEV-SNP enclave. Fingerprint verified.</div>
+      <div><span class="dim">[00:00.045]</span> [System Ready] Awaiting agent task dispatch. Ready to enforce Closed Runtime Envelope.</div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <h2>90-day plan</h2>
+    <p class="secintro">From identity validation to a paid enterprise pilot.</p>
+    <table>
+      <tr><th>Timeframe</th><th>Strategic Focus</th><th>Functional Deliverables</th><th>Validation Evidence</th></tr>
+      <tr>
+        <td>Days 01–15</td>
+        <td>Asset &amp; Identity Validation</td>
+        <td>Resolve 101domain superinteligentnost.si administrative hold · Test 3 positioning statements across 15 technical stakeholders · Publish Lab Manifesto &amp; sovereign research portal</td>
+        <td>Domain resolves; narrative clarity without AGI claims</td>
+      </tr>
+      <tr>
+        <td>Days 16–30</td>
+        <td>Acute Problem Discovery</td>
+        <td>Interview 10–15 enterprise CISOs and AI Platform Heads · Isolate single high-stakes unconstrained workflow (e.g. multi-tool data exfiltration) · Map customer regulatory constraints (EU AI Act High-Risk systems)</td>
+        <td>Validated budget owner &amp; willingness to trial solution</td>
+      </tr>
+      <tr>
+        <td>Days 31–60</td>
+        <td>Auditable Demonstrator</td>
+        <td>Build turnkey Auditable Research Agent with RIP sidecar · Implement Negative-Affirmation Human Gate &amp; AGM state revision engine · Release Technical Monograph #01 with reproducible benchmark traces</td>
+        <td>100% containment integrity against prompt injection</td>
+      </tr>
+      <tr>
+        <td>Days 61–90</td>
+        <td>Paid Enterprise Pilot</td>
+        <td>Execute standardized $25k–$50k 6-week commercial pilot term sheet · Deploy bounded runtime envelope in client staging environment · Document measurable reduction in unauthorized mutation risk</td>
+        <td>Paid pilot contract &amp; validated case study</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <div class="doms">superinteligentnost.si · superinteligentnost.com</div>
+    <p>Superinteligentnost — a sovereign European-rooted research institute under Agentics Inc.</p>
+    <p>We do not claim to build superintelligence. We build the systems that let organizations use increasingly capable AI safely.</p>
+  </footer>
+</div>
+</main>
+<script>
+(function(){
+  var titles={sl:"SUPERINTELIGENTNOST — Raziskovalna pobuda Agentics",en:"SUPERINTELIGENTNOST — An Agentics Research Initiative"};
+  var descs={sl:"Superinteligentnost: suveren evropsko zasidran raziskovalni inštitut in inženirski laboratorij pod okriljem družbe Agentics Inc.",en:"SUPERINTELIGENTNOST: a sovereign European-rooted research institute and specialist engineering laboratory under Agentics Inc."};
+  function setLang(l){
+    document.body.setAttribute("data-lang",l);
+    document.documentElement.lang=l;
+    document.title=titles[l];
+    var m=document.querySelector('meta[name="description"]'); if(m) m.content=descs[l];
+    document.querySelectorAll("[data-setlang]").forEach(function(b){
+      var on=b.getAttribute("data-setlang")===l;
+      b.classList.toggle("on",on); b.setAttribute("aria-pressed",on);
+    });
+    try{localStorage.setItem("si-lang",l);}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem("si-lang");}catch(e){}
+  setLang(saved==="en"?"en":"sl");
+  document.querySelectorAll("[data-setlang]").forEach(function(b){
+    b.addEventListener("click",function(){setLang(b.getAttribute("data-setlang"));});
+  });
+})();
+</script>
+</body>
+</html>
